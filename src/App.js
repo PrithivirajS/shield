@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from 'react-bootstrap';
 import Api from './Api/gets';
 import Csv from './Csv/files';
+import Dropdown from './Dropdown/down';
 
 class App extends Component {
   constructor(props) {
@@ -33,11 +34,14 @@ class App extends Component {
   return (
     <>
     <div className="App">
-    <Navigation />
-    <h1> SHIELD</h1>
-    <Button className="Button" onClick ={this.fetchData}>Default</Button>
-    <Button type ="button">Reset</Button>
-    <Button className="mr-2 success">Success</Button>
+        <Navigation />
+          <center>
+              <h1> SHIELD</h1>
+                <Button className="Button" onClick ={this.fetchData}>Default</Button>
+                <Button type ="button">Reset</Button>
+                <Button >Success</Button>
+          </center>
+        <Dropdown />
     </div>
     <ul>
     {this.state.suggestion.length && ( this.state.suggestion.map(function(item){

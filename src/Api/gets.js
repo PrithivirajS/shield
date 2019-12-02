@@ -11,7 +11,12 @@ class Api extends Component {
   componentDidMount(){
   }
   fetchs = () => {
-    fetch("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/posts.json")
+    fetch("https://api-mib.ailiens.com/b/oms/returnStates",{
+  'method' : 'GET',
+  'headers': {
+    'x-roles' : 'ROLE_BUSINESS_USER',
+    'x-tenant-id' : '5f9d336a-eedb-4fa4-b408-cf38cefc96e0'
+  }})
     .then((res) => res.json())
     .then((data) =>  console.log(data))
     .catch((err)=>console.log(err))
