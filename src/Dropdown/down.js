@@ -26,28 +26,46 @@ class Dropdown extends Component {
 
     }
   }
-  render(){
+render(){
     return(
       <>
-        <div>
-          <button onClick={this.showMenu}> show menu </button>
-        {
-          this.state.showMenu
-          ? (
-            <div className ="menu" ref={(element) => {
-              this.dropdownMenu = element;
-            }}>
-              <ul class ="nav">
-                <li><a href ="#">Home 1</a></li>
-                <li><a href ="#">Home 2</a></li>
-                <li><a href ="#">Home 3</a></li>
-              </ul>
-            </div>
-          )
-          : (
-            null
-          )
-        }
+        <div id ="side" >
+          <div class ="button-header">
+            <h3>SHILED</h3>
+          </div>
+          <div class="head">
+                <a href="#" onClick={this.showMenu}>Menu</a></div>
+                          {
+                            this.state.showMenu
+                            ? (
+                              <div className ="menu" ref={(element) => {
+                                this.dropdownMenu = element;
+                              }}>
+                                <ul class="list-unstyled dummyheaders">
+                                  <li class="homeheader">
+                                    <a href="#" > Home </a>
+                                            <ul class="homelist" >
+                                              <li><a href="#">Fetch Data</a></li>
+                                              <li><a href="#">CSV</a></li>
+                                              <li><a href="#">Navigation</a></li>
+                                            </ul>
+                                      <li><a href="#">About</a></li>
+                                            <li class="itemheader">
+                                              <ul class="itemlist">
+                                                <li><a href="#">List 1</a></li>
+                                                <li><a href="#">List 2</a></li>
+                                                <li><a href="#">List 3</a></li>
+                                              </ul>
+                                            </li>
+                                    </li>
+                                </ul>
+                              </div>
+                            )
+                            : (
+                              null
+                            )
+                          }
+
       </div>
     </>
     );

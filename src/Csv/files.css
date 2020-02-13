@@ -1,0 +1,43 @@
+.Appcss{
+  padding: 20px;
+  margin: 20px;
+}
+
+#para{
+  text-align: center;
+}
+
+ .csvinput {
+  /* text-align: center;
+  border: 1px solid #dce4ec;
+  padding: 5px;
+  display:block;
+  color: #34495e;
+  cursor:pointer;
+  height:100%;
+  line-height:40px;
+  text-align:left;
+  background:#fedbca; */
+  position:relative;
+  text-align: right;
+  opacity: 0;
+}
+
+ .filebtn {
+  text-align: center;
+  background: #7FFFD4;
+  border-radius: 25px;
+  border: 1px solid #7FFFD4;
+  padding: 10px;
+  width: 100px;
+  color: red
+}
+
+.table-container{
+  width : 100%;
+  table-layout: auto;
+}
+
+table th {
+    width: auto !important;
+}

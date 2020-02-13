@@ -7,6 +7,7 @@ class Api extends Component {
   constructor(props){
     super(props);
     this.state ={value: "" }
+    this.closeMenu = this.closeMenu.bind(this);
   }
   componentDidMount(){
   }
@@ -20,6 +21,15 @@ class Api extends Component {
     .then((res) => res.json())
     .then((data) =>  console.log(data))
     .catch((err)=>console.log(err))
+}
+closeMenu(event) {
+
+  if (!this.dropdownMenu.contains(event.target)) {
+    this.setState({ value: false }, () => {
+      document.removeEventListener('click', this.closeMenu);
+    });
+
+  }
 }
 render(){
   return(

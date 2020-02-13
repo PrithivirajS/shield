@@ -1,6 +1,7 @@
 import React from 'react';
 import Papa from 'papaparse';
-import { CsvToHtmlTable,csvfile } from 'react-csv-to-table'
+import { CsvToHtmlTable,csvfile } from 'react-csv-to-table';
+import './files.css';
 
 class Csv extends React.Component {
   constructor() {
@@ -47,16 +48,15 @@ class Csv extends React.Component {
   render() {
     console.log(this.state.csvdata);
     return (
-      <div className="App">
-        <h2>Import CSV File!</h2>
-        <input className="csv-input" type="file"
-          ref={input => {this.filesInput = input;}}
-          name="file"
-          placeholder={null}
-          onChange={this.handleChange}
-        />
-        <p />
-        <button onClick={this.importCSV}> Upload now!</button>
+      <div className="Appcss">
+        <p><b><u> Manual Pick Fail</u></b></p>
+        <label class="fileContainer">
+        Click the CSV file  here
+            <input className="csvinput" type="file" ref={input => {this.filesInput = input;}} name="file" placeholder={null}
+              onChange={this.handleChange}
+            />
+        </label>
+        <button class="filebtn" onClick={this.importCSV}> View </button>
         <div className="table-container">
         {(this.state.csvdata) && <CsvToHtmlTable data={this.state.csvdata} csvDelimiter="," tableClassName="table table-striped table-hover"/>}
         </div>

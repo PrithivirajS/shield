@@ -6,6 +6,7 @@ import {Button} from 'react-bootstrap';
 import Api from './Api/gets';
 import Csv from './Csv/files';
 import Dropdown from './Dropdown/down';
+import Ftp from './Ftp/path';
 
 class App extends Component {
   constructor(props) {
@@ -34,24 +35,21 @@ class App extends Component {
   return (
     <>
     <div className="App">
-        <Navigation />
-          <center>
-              <h1> SHIELD</h1>
-                <Button className="Button" onClick ={this.fetchData}>Default</Button>
-                <Button type ="button">Reset</Button>
-                <Button >Success</Button>
-          </center>
-        <Dropdown />
+      <Dropdown />
+          <div class="App-header">
+              <h2> SHIELD</h2>
+                  <Button className="ButtonAPI" onClick ={this.fetchData}>GetAPI</Button>
+                  <ul>
+                    {this.state.suggestion.length && ( this.state.suggestion.map(function(item){
+                        return(
+                          <li key={item.id}>{item.id} {item.title}</li>
+                        )
+                      }))}
+                  </ul>
+                  <Csv />
+          </div>
     </div>
-    <ul>
-    {this.state.suggestion.length && ( this.state.suggestion.map(function(item){
-        return(
-          <li key={item.id}>{item.id} {item.title}</li>
-        )
-      }))}
-    </ul>
-    <Api />
-    <Csv />
+
     </>
   );
 }
