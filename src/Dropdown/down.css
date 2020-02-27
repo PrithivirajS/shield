@@ -1,10 +1,9 @@
-#side{
+/* #side{
     width: 250px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 999;
     background: #6d769c;
     color: #fff;
     transition: all 0.3s;
@@ -18,15 +17,31 @@
   text-align: center
 }
 
-.head{
-  padding: 10px;
+.dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+} */
+
+/* .head{
+  padding: 20px;
   font-size: 1.1em;
+  color: red;
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: red;
   right: 25px;
-  display: block;
-  text-decoration: none;
+  font-size: 4vh;
+  background-color: #6d769c;
+  text-align: center;
 }
 
 .head a:hover{
@@ -41,4 +56,39 @@
     display: block;
     text-decoration: none;
     color: #f0f1f5;
+} */
+
+
+.side {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  background: #6d769c;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  border: 1px;
+}
+
+
+#dropdown-btn ul li {
+  color: rgba(230, 230, 230, 0.5);
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3)
 }

@@ -6,21 +6,21 @@ class Dropdown extends Component {
   constructor() {
     super();
     this.state = {
-      showMenu: false,
+      display: false,
     }
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
   showMenu(event) {
     event.preventDefault();
-    this.setState({ showMenu: true}, () => {
+    this.setState({ display: true}, () => {
       document.addEventListener('click', this.closeMenu);
     });
   }
   closeMenu(event) {
 
     if (!this.dropdownMenu.contains(event.target)) {
-      this.setState({ showMenu: false }, () => {
+      this.setState({ display: false }, () => {
         document.removeEventListener('click', this.closeMenu);
       });
 
@@ -29,37 +29,28 @@ class Dropdown extends Component {
 render(){
     return(
       <>
-        <div id ="side" >
+        <div class ="side" >
           <div class ="button-header">
             <h3>SHILED</h3>
           </div>
           <div class="head">
-                <a href="#" onClick={this.showMenu}>Menu</a></div>
-                          {
-                            this.state.showMenu
-                            ? (
-                              <div className ="menu" ref={(element) => {
+              <button class="dropdown-btn dropdown-toggle" id="menu" data-toggle="dropdown" onClick={this.showMenu}> Menu </button> </div>
+                  {
+                    this.state.display ? (
+                        <div className ="menu" ref={(element) => {
                                 this.dropdownMenu = element;
-                              }}>
-                                <ul class="list-unstyled dummyheaders">
+                              }}  aria-labelledby="menu">
+                                <ul class="menulist" aria-labelledby="menu">
                                   <li class="homeheader">
-                                    <a href="#" > Home </a>
-                                            <ul class="homelist" >
-                                              <li><a href="#">Fetch Data</a></li>
-                                              <li><a href="#">CSV</a></li>
-                                              <li><a href="#">Navigation</a></li>
-                                            </ul>
-                                      <li><a href="#">About</a></li>
-                                            <li class="itemheader">
-                                              <ul class="itemlist">
-                                                <li><a href="#">List 1</a></li>
-                                                <li><a href="#">List 2</a></li>
-                                                <li><a href="#">List 3</a></li>
-                                              </ul>
-                                            </li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="homelist"> Home </a>
+                                      <ul class="homelist">
+                                        <li><a href="#">Fetch Data</a></li>
+                                        <li><a href="#">CSV</a></li>
+                                        <li><a href="#">Navigation</a></li>
+                                      </ul>
                                     </li>
                                 </ul>
-                              </div>
+                          </div>
                             )
                             : (
                               null
